@@ -14,6 +14,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         //
+        Commands\DeleteChartRecords::class,
     ];
 
     /**
@@ -23,9 +24,12 @@ class Kernel extends ConsoleKernel
      * @return void
      */
     protected function schedule(Schedule $schedule)
-    {
-        // $schedule->command('inspire')->hourly();
-    }
+{
+    $schedule->command('delete:chart-records')->daily();
+}
+
+    
+
 
     /**
      * Register the commands for the application.
